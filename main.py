@@ -1,3 +1,4 @@
+####################################### A UTILISER DANS QUANTCONNECT !!!!!!! #####################################
 # import des différentes librairies
 import clr
 clr.AddReference("System")

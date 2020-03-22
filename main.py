@@ -71,7 +71,7 @@ class KerasNeuralNetworkAlgorithm(QCAlgorithm):
     
     def NetTrain(self):
         # Données historiques utilisées pour entraîner le modèle de resolution 
-        history = self.History(self.symbols, self.lookback + 1, Resolution.Hour)
+        history = self.History(self.symbols, self.lookback + 1, Resolution.Daily)
         
         # Dictionnaire pour stocker les prix des assets
         self.prices_x = {} 

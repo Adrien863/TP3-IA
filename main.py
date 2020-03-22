@@ -123,7 +123,7 @@ class KerasNeuralNetworkAlgorithm(QCAlgorithm):
         Liquider sa position si le prix d'ouverture est inférieur au prix de vente et acheter si le prix d'ouverture est supérieur au prix d'achat
         ''' 
         for holding in self.Portfolio.Values:
-            if self.CurrentSlice[holding.Symbol].Open < self.sell_prices[holding.Symbol] and holding.Invested:
+            if (self.CurrentSlice[holding.Symbol].Open < self.sell_prices[holding.Symbol] or self.Portfolio.TotalUnrealizedProfit > 50000) and holding.Invested:
                 self.Liquidate(holding.Symbol)
             
             if self.CurrentSlice[holding.Symbol].Open > self.buy_prices[holding.Symbol] and not holding.Invested:
